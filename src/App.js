@@ -1,11 +1,26 @@
 import React from 'react';
-import './App.css';
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+import ForgotPassword from './pages/ForgotPassword';
+import Home from './pages/Home';
+import Offer from './pages/Offer';
+import Profile from './pages/Profile';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 
 function App() {
   return (
-    <div className="md:text-3xl bg-red-500 py-5 text-center text-white">
-      <h1>Wellcome to Quarter.Its a Real State Website.</h1>
-    </div>
+    <>
+      <Router>
+         <Routes>
+           <Route path='/' element={<Home/>} />
+           <Route path='/profile' element={<Profile/>} />
+           <Route path='/signIn' element={<SignIn/>} />
+           <Route path='/SignUp' element={<SignUp/>} />
+           <Route path='/offer' element={<Offer />} />
+           <Route path='/forgotPassword' element={<ForgotPassword />} />
+         </Routes>
+      </Router>
+    </>
   );
 }
 
